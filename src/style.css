@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root { --ink: #f7f7fb; --muted: #a9a8b7; --line: #302f38; --paper: #101011; --panel: #18181b; --violet: #7467ff; --violet-soft: #28234e; --white: #fff; font-family: 'DM Sans', sans-serif; color: var(--ink); background: var(--paper); font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: var(--paper); }
+button, input { font: inherit; }
+.page-shell { width: min(1120px, calc(100% - 48px)); margin: 0 auto; padding: 30px 0 72px; }
+.top-nav { position: sticky; z-index: 5; top: 18px; display: flex; justify-content: center; gap: 4px; width: fit-content; margin: 0 auto 54px; padding: 5px; border: 1px solid var(--line); border-radius: 10px; background: rgba(24, 24, 27, .94); box-shadow: 0 12px 30px rgba(0, 0, 0, .24); backdrop-filter: blur(8px); }
+.top-nav a { display: flex; align-items: center; gap: 8px; padding: 9px 17px; color: var(--muted); border-radius: 7px; font-size: 12px; text-decoration: none; }
+.top-nav a:hover, .top-nav a.active { color: var(--white); background: var(--violet-soft); }
+.top-nav small { color: #77738e; font-size: 8px; text-transform: uppercase; }
+.page-header, .results-header { display: flex; align-items: center; justify-content: space-between; }
+h1, h2 { margin: 0; font-weight: 600; }
+h1 { font: 700 42px/1 'Space Mono', monospace; letter-spacing: -2px; }
+h2 { font: 700 22px 'Space Mono', monospace; }
+.saved-count { display: grid; place-items: center; width: 35px; height: 35px; color: var(--violet); border: 1px solid #554db0; border-radius: 50%; font-size: 12px; }
+.income-panel { margin-top: 42px; padding: 28px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); box-shadow: 0 18px 40px rgba(0, 0, 0, .17); }
+.income-form { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) auto; gap: 18px; align-items: end; }
+.income-form label { position: relative; display: block; color: var(--ink); font-size: 12px; font-weight: 600; }
+.income-form input { display: block; width: 100%; margin-top: 8px; padding: 13px 14px; color: var(--ink); border: 1px solid var(--line); border-radius: 6px; outline: none; background: #111115; font-size: 13px; }
+.income-form input:focus { border-color: var(--violet); box-shadow: 0 0 0 3px rgba(116, 103, 255, .18); }
+.income-form input[aria-invalid='true'] { border-color: #d66a7a; }
+.field-error { position: absolute; top: 68px; left: 0; color: #e88998; font-size: 10px; font-weight: 400; }
+.primary-button { display: flex; align-items: center; justify-content: space-between; gap: 25px; min-width: 130px; padding: 14px 16px; color: white; border: 0; border-radius: 6px; background: var(--violet); font-size: 13px; cursor: pointer; }
+.primary-button:hover { background: #887dff; }
+.primary-button span { font-size: 18px; }
+.results-panel { margin-top: 64px; }
+.results-header { margin-bottom: 20px; }
+.export-actions { display: flex; gap: 8px; }
+.export-actions button { padding: 7px 10px; color: #b8b2ff; border: 1px solid #5149a7; border-radius: 5px; background: transparent; font-size: 10px; cursor: pointer; }
+.export-actions button:hover { background: var(--violet-soft); }
+.results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.result-card { position: relative; min-height: 148px; padding: 22px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+.result-card.wide { min-height: 148px; background: #211c45; border-color: #423a80; }
+.result-title, .result-card small { display: block; color: var(--muted); font-size: 11px; }
+.result-card strong { display: block; margin-top: 25px; color: #c5c0ff; font: 700 28px 'Space Mono', monospace; }
+.result-card small { margin-top: 4px; }
+.formula-heading { display: flex; align-items: flex-start; gap: 13px; }
+.formula-number { color: #7169a0; font: 700 13px 'Space Mono', monospace; }
+.formula-heading > div { display: flex; align-items: center; gap: 8px; }
+.formula-heading .result-title { font-weight: 600; }
+.info-button { display: inline-grid; place-items: center; width: 17px; height: 17px; padding: 0; color: #bdb7ff; border: 1px solid #6258c8; border-radius: 50%; background: transparent; font: 700 10px 'Space Mono', monospace; cursor: pointer; }
+.info-button:hover, .info-button.active { color: var(--white); background: var(--violet); }
+.formula-explanation { position: absolute; z-index: 10; top: 58px; left: 22px; width: min(330px, calc(100% - 44px)); margin: 0; padding: 13px; border: 1px solid #5149a7; border-left: 2px solid var(--violet); border-radius: 6px; background: #12121a; box-shadow: 0 16px 30px rgba(0, 0, 0, .45); color: #c1bfca; font-size: 11px; line-height: 1.5; }
+.formula-explanation b { display: block; color: #e0ddff; font-size: 10px; letter-spacing: .4px; text-transform: uppercase; }
+.formula-explanation p { margin: 3px 0 10px; }
+.formula-explanation p:last-child { margin-bottom: 0; }
+.formula-card > strong { margin-top: 28px; }
+.formula-card > small { color: var(--muted); }
+.share-values { display: grid; grid-template-columns: 1fr 1fr; column-gap: 25px; }
+.share-values strong { margin-top: 28px; }
+.share-values small { margin-top: 4px; }
+.future-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 64px; }
+.future-panel { display: flex; align-items: center; justify-content: space-between; min-height: 90px; padding: 19px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+.future-panel h2 { font-size: 17px; }
+.future-panel span { color: var(--muted); font-size: 10px; }
+@media (max-width: 760px) { .page-shell { width: min(100% - 28px, 600px); padding-top: 18px; } .top-nav { top: 10px; margin-bottom: 38px; } .top-nav a { padding: 8px 10px; } .income-form { grid-template-columns: 1fr; gap: 21px; } .primary-button { width: 100%; } .field-error { top: 68px; } .results-grid, .future-grid { grid-template-columns: 1fr; } }
+@media (max-width: 420px) { h1 { font-size: 32px; } .income-panel { padding: 20px; } .top-nav a { gap: 3px; padding: 8px 7px; font-size: 11px; } }
